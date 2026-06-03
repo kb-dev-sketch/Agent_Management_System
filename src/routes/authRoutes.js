@@ -5,7 +5,7 @@ const {
     loginAdmin,
     logoutAdmin
 }=require("../controllers/admin_controller")
-const {createAgent,getAgent}=require("../controllers/agent_controller")
+const {createAgent,getAgent,deleteAgent}=require("../controllers/agent_controller")
 console.log(registerAdmin);
 console.log(loginAdmin);
 console.log(logoutAdmin);
@@ -14,5 +14,6 @@ router.post("/login",loginAdmin);
 router.post("/logout",logoutAdmin);
 router.post("/createAgent",createAgent)
 router.get("/getAgent",getAgent)
+router.post("/deleteAgent",deleteAgent)
 
 module.exports=router;

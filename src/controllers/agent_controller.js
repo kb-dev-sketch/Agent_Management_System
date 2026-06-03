@@ -57,6 +57,24 @@ const getAgent=async(req,res)=>{
         })
     }
 }
+const deleteAgent=async(req,res)=>{
+    try{
+    const {id}=req.params;
+    const agent=await Agent.findByIdAndDelete(id);
+    if(!agent){
+        return res.status(404).json({
+            message:"Agent not found"
+        })
+    }
+    return res.status(200).json({
+        message:"Agent is deleted Successfully"
+    })
 
-
-module.exports={createAgent,getAgent}
+}
+catch(error){
+    res.status(500).json({
+        message:error.message,
+    });
+}
+}
+module.exports={createAgent,getAgent,deleteAgent}
