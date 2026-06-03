@@ -1,9 +1,9 @@
 const bcrypt=require("bcrypt");
-const Agent = require("../models/agent_model");
+const Agent = require("../models/agent-model");
 const createAgent=async(req,res)=>{
     try{
     const {email,firstName,password,phoneNumber}=req.body
-if(!email || !password|| firstName || !phoneNumber ){
+if(!email || !password|| !firstName || !phoneNumber ){
     return res.status(403).json({
         message:"all fields required "
     })
@@ -42,4 +42,21 @@ catch(error){
     });
 }
 };
-module.exports={createAgent}
+
+const getAgent=async(req,res)=>{
+    try{
+        const agents=await Agent.find();
+        res.status(200).json({
+            success:true,
+            agents,
+        });
+    }
+    catch(error){
+        res.status(500).json({
+            message:error.message
+        })
+    }
+}
+
+
+module.exports={createAgent,getAgent}
