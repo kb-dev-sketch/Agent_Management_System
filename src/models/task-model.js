@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+const mongoose =require("mongoose")
+
 const taskSchema=new mongoose.Schema({
     firstName:{
         type:String,

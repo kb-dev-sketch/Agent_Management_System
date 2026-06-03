@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const User = require("../models/user-model");
 const registerAdmin=async(req,res)=>{
     // get user details from frontend
     // validation of user details 

@@ -1,4 +1,4 @@
-import mongoose from"mpngoose ";
+const mongoose =require("mongoose")
 const agentSchema=new mongoose.Schema({
 firstName:{
     type:String,

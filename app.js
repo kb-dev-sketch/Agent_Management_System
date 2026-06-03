@@ -1,7 +1,7 @@
 const express =require('express');
 const cors=require('cors');
 const dotenv=require('dotenv');
-const authRoutes=require("./routes/authRoutes")
+const authRoutes=require("./src/routes/authRoutes")
 
 dotenv.config();
 
@@ -17,6 +17,6 @@ app.get("/",(req,res)=>{
     message:"Welcome to the backend of the application"
   })
 })
-app.use("api/auth",authRoutes);
+app.use("/api/auth",authRoutes);
 module.exports = app;
 
