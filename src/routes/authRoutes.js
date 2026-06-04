@@ -14,6 +14,6 @@ router.post("/login",loginAdmin);
 router.post("/logout",logoutAdmin);
 router.post("/createAgent",createAgent)
 router.get("/getAgent",getAgent)
-router.post("/deleteAgent",deleteAgent)
+router.delete("/:id",deleteAgent)
 
 module.exports=router;
